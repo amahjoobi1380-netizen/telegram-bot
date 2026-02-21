@@ -1,9 +1,12 @@
 import os
-TOKEN = os.environ["BOT_TOKEN"]
 import re
 import asyncio
 import logging
 from datetime import datetime, timedelta
+
+TOKEN = os.getenv("BOT_TOKEN")
+if not TOKEN:
+    raise RuntimeError("BOT_TOKEN is not set in Railway Variables.")
 
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import CommandStart
