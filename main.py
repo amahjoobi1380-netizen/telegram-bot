@@ -1,10 +1,10 @@
 import os
+TOKEN = os.environ["BOT_TOKEN"]
 import re
 import asyncio
 import logging
 from datetime import datetime, timedelta
 
-from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import CommandStart
 from aiogram.types import (
@@ -62,7 +62,7 @@ from db import (
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("BOT")
 
-load_dotenv()
+
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_IDS = {int(x) for x in os.getenv("ADMIN_IDS", "").split(",") if x.strip()}
 
