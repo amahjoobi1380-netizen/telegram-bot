@@ -1,7 +1,7 @@
-import aiosqlite
+import os
+import asyncpg
 from datetime import datetime, timedelta
 
-DB_PATH = "bot.db"
 
 
 def _utc_now_str() -> str:
